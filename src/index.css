@@ -1,0 +1,181 @@
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: linear-gradient(to bottom right, #1f2937, #111827);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode {
+  background: #f4f4f4;
+  color: #111827;
+}
+
+.card {
+  background-color: white;
+  color: black;
+  padding: 2rem;
+  border-radius: 1rem;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+body.dark-mode .card {
+  background-color: #ffffff;
+  color: #1f2937;
+}
+
+.social-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.social-buttons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  border: 1px solid #ccc;
+}
+
+.social-buttons a.github {
+  background-color: #f3f4f6;
+}
+.social-buttons a.github:hover {
+  background-color: #e5e7eb;
+}
+
+.social-buttons a.linkedin {
+  background-color: #c7d2fe;
+}
+.social-buttons a.linkedin:hover {
+  background-color: #a5b4fc;
+}
+
+.social-buttons a.email {
+  grid-column: span 2;
+  background-color: #f9fafb;
+}
+.social-buttons a.email:hover {
+  background-color: #e5e7eb;
+}
+
+.social-buttons a.resume {
+  grid-column: span 2;
+  background-color: #def7ec;
+}
+.social-buttons a.resume:hover {
+  background-color: #c6f6d5;
+}
+
+.skills {
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.projects {
+  max-width: 700px;
+  width: 100%;
+  color: white;
+  padding: 1rem;
+}
+
+.projects h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.project-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.project {
+  background-color: #1f2937;
+  padding: 1rem 1.25rem;
+  border-radius: 0.75rem;
+  border: 1px solid #374151;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+.project h3 {
+  margin-top: 0;
+  color: #a5b4fc;
+}
+.project p {
+  margin-bottom: 0;
+  color: #d1d5db;
+}
+
+/* ========== DARK MODE TOGGLE SWITCH ========== */
+.theme-toggle-wrapper {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #4f46e5;
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
